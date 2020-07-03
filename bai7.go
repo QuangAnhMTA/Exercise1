@@ -25,27 +25,37 @@ type User struct {
 	address string
 }
 
-func (u *User) getname() string {
+func (u *User) Getname() string {
 	return u.name
 }
-func (u *User) getAddress() string {
+
+func (u *User) GetAddress() string {
 	return u.address
 }
+func (u *User) GetAge() int64 {
+	return u.age
+}
+func (u *User) GetGender() bool {
+	return u.gender
+}
+
 func map_ls() {
-	m := make(map[string]User)
+	m := make(map[string]*User)
 	for i := 0; i < 10; i++ {
 		s := strconv.Itoa(i)
-		u := User{name: "user" + s, age: int64(i) + 20}
-		m["k"+s] = u
-	}
-	// for _, u := range m {
-	// 	fmt.Println(u)
+		u := User{name: "user" + s, age: int64(i) + 20, address: "HN", gender: true}
+		m[u.name] = &u
 
-	// }
-	sl1 := []User{}
+	}
+	for _, u := range m {
+		fmt.Println(u)
+
+	}
+	sl1 := make([]*User, 0)
 	for _, u := range m {
 		sl1 = append(sl1, u)
 	}
+	fmt.Println("chuyen map sang slide")
 	for _, u := range sl1 {
 		fmt.Println(u)
 	}

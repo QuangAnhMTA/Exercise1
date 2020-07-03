@@ -21,7 +21,7 @@ func main() {
 	}
 	sv := make([]serve, 2)
 	sv = readfile("serve.js")
-	locAdmin("org.cofax.cds.FileServlet", sv)
+	locAdmin("admin", sv)
 	addserve("fileCustome", "org.cofax.cds.FileServlet.Custome", sv)
 	inaddress(sv)
 	sl()

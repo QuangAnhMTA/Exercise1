@@ -28,5 +28,5 @@ func writetofile(filename string, data string) error {
 	if err != nil {
 		return err
 	}
-	return file.Sync()
+	return nil
 }

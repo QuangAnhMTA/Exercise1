@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"strings"
 )
 
 type serve struct {
@@ -28,8 +29,9 @@ func readfile(filename string) []serve {
 
 //3. Thực hiện lọc kết quả với class có chứa từ admin in ra đối tượng phù hợp.
 func locAdmin(ad string, sv []serve) {
+	fmt.Println("Loc Admin")
 	for _, i := range sv {
-		if i.Class == ad {
+		if strings.Contains(strings.ToUpper(i.Class), strings.ToUpper(ad)) {
 			log.Println("name:", i.Name)
 			log.Println("class:", i.Class)
 		}
@@ -54,7 +56,7 @@ func addserve(name string, class string, sv []serve) {
 // 5 .In ra màn hình các địa chỉ của các item strong slice trên
 
 func inaddress(sv []serve) {
-	for i := range sv {
-		fmt.Println(&i)
+	for i := 0; i < len(sv); i++ {
+		fmt.Printf("%p \n", &sv[i])
 	}
 }
