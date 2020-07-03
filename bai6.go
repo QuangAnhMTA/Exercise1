@@ -21,6 +21,6 @@ func sl() {
 	}
 	l := s[1:8]
 	fmt.Println("l:", l)
-	//l1 := s[1:15]
-	//fmt.Println("l1:", l1)
+	// l1 := s[1:15]
+	// fmt.Println("l1:", l1)
 }

@@ -25,4 +25,5 @@ func main() {
 	addserve("fileCustome", "org.cofax.cds.FileServlet.Custome", sv)
 	inaddress(sv)
 	sl()
+	map_ls()
 }
