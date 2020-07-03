@@ -9,8 +9,10 @@ Copy slice trên với index từ 1 đến 15.(có lỗi ko?)
 package main
 
 import (
+	"errors"
 	"fmt"
 	"sort"
+	"strconv"
 )
 
 func sl(leng int) {
@@ -26,4 +28,12 @@ func sl(leng int) {
 		fmt.Println("l:", l)
 	}
 
+}
+func copyslices(sl []int, from int, to int) ([]int, error) {
+	if to > len(sl) {
+		str := "Khong the copy slice co length lon hon " + strconv.Itoa(len(sl))
+		return nil, errors.New(str)
+	}
+	l := sl[from:to]
+	return l, nil
 }
