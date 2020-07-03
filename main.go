@@ -15,15 +15,15 @@ func main() {
 		  "class": "org.cofax.cds.FileServlet"
 		}
 	]`
-	err := writetofile("serve.js", str)
+	err := writetofile("serve.json", str)
 	if err != nil {
 		log.Fatal(err)
 	}
 	sv := make([]serve, 2)
-	sv = readfile("serve.js")
+	sv = readfile("serve.json")
 	locAdmin("admin", sv)
 	addserve("fileCustome", "org.cofax.cds.FileServlet.Custome", sv)
 	inaddress(sv)
-	sl()
+	sl(15)
 	map_ls()
 }

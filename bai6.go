@@ -13,13 +13,17 @@ import (
 	"sort"
 )
 
-func sl() {
+func sl(leng int) {
 	s := []int{11, 34, 56, 77, 99, 109, 66, 20, 88, 34}
 	sort.Ints(s)
 	for _, i := range s {
 		fmt.Println(i)
 	}
-	l := s[1:8]
-	fmt.Println("l:", l)
-	
+	if len(s) < leng {
+		fmt.Printf("Ban khong the copy slice co length lon hon %d \n", len(s))
+	} else {
+		l := s[1:leng]
+		fmt.Println("l:", l)
+	}
+
 }
